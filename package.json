@@ -1,5 +1,5 @@
 {
-  "name": "marimeta-admin",
+  "name": "my-strapi-project",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -11,10 +11,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.0.1",
-    "@strapi/plugin-users-permissions": "5.0.1",
-    "@strapi/strapi": "5.0.1",
-    "better-sqlite3": "9.4.3",
+    "@strapi/plugin-cloud": "5.0.2",
+    "@strapi/plugin-users-permissions": "5.0.2",
+    "@strapi/strapi": "5.0.2",
+    "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -26,6 +26,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "3c0184c4-4394-49e1-b111-6ad9610fe288"
+    "uuid": "f3cc72ef-f984-4f55-b926-ae77a82cba8f"
   }
 }
