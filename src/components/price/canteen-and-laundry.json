@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_price_canteen_and_laundries",
+  "info": {
+    "displayName": "canteenAndLaundry"
+  },
+  "options": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  }
+}

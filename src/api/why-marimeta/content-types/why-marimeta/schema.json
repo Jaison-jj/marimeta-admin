@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_marimetas",
+  "info": {
+    "singularName": "why-marimeta",
+    "pluralName": "why-marimetas",
+    "displayName": "whyMarimeta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerSubHeading": {
+      "type": "string"
+    },
+    "reasonImg": {
+      "displayName": "imgWithHeading",
+      "type": "component",
+      "repeatable": true,
+      "component": "why-marimeta.img-with-heading"
+    },
+    "bannerTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reasonGridTitle": {
+      "type": "string"
+    },
+    "footer": {
+      "type": "text"
+    }
+  }
+}

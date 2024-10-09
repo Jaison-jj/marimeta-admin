@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_price_service_and_prices",
+  "info": {
+    "displayName": "serviceAndPrice"
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}
