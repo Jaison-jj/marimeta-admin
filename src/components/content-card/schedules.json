@@ -1,11 +1,15 @@
 {
-  "collectionName": "components_a_typical_day_day_images",
+  "collectionName": "components_content_card_schedules",
   "info": {
-    "displayName": "dayImage",
+    "displayName": "Schedules",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "img": {
+      "type": "string",
+      "required": true
+    },
     "time": {
       "type": "time",
       "required": true
@@ -14,9 +18,9 @@
       "type": "string",
       "required": true
     },
-    "image": {
+    "description": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }

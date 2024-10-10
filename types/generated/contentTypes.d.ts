@@ -497,11 +497,11 @@ export interface ApiATypicalDayATypicalDay extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    bannerImg: Schema.Attribute.String;
-    bannerHeading: Schema.Attribute.String;
-    bannerSubHeading: Schema.Attribute.String;
-    descriptionTitle: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
+    bannerImg: Schema.Attribute.String & Schema.Attribute.Required;
+    bannerHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    bannerSubHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    descriptionTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     imageWithTimeAndTitle: Schema.Attribute.Component<
       'a-typical-day.day-image',
       true
@@ -549,6 +549,10 @@ export interface ApiDateAndRateDateAndRate extends Struct.SingleTypeSchema {
     additionalItemsTitle: Schema.Attribute.String;
     phone: Schema.Attribute.BigInteger;
     email: Schema.Attribute.Email;
+    reachOutToUsText: Schema.Attribute.Text;
+    footerBannerImgUrl: Schema.Attribute.String;
+    footerHeading: Schema.Attribute.String;
+    footerDescription: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -560,6 +564,39 @@ export interface ApiDateAndRateDateAndRate extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::date-and-rate.date-and-rate'
+    >;
+  };
+}
+
+export interface ApiFamilyCampFamilyCamp extends Struct.SingleTypeSchema {
+  collectionName: 'family_camps';
+  info: {
+    singularName: 'family-camp';
+    pluralName: 'family-camps';
+    displayName: 'familyCamp';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerImg: Schema.Attribute.String;
+    bannerHeading: Schema.Attribute.String;
+    bannerSubHeading: Schema.Attribute.String;
+    rsvpHeading: Schema.Attribute.String;
+    rsvpSubHeading: Schema.Attribute.String;
+    imageCards: Schema.Attribute.Component<'content-card.image-card', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::family-camp.family-camp'
     >;
   };
 }
@@ -587,6 +624,46 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::landing-page.landing-page'
+    >;
+  };
+}
+
+export interface ApiMiniMetaTourDayMiniMetaTourDay
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mini_meta_tour_days';
+  info: {
+    singularName: 'mini-meta-tour-day';
+    pluralName: 'mini-meta-tour-days';
+    displayName: 'miniMetaTourDay';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    bannerSubHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    bannerImg: Schema.Attribute.String & Schema.Attribute.Required;
+    signUpBannerImg: Schema.Attribute.String & Schema.Attribute.Required;
+    signUpBannerHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    signUpBannerButton: Schema.Attribute.String & Schema.Attribute.Required;
+    signUpBannerDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    signUpBannerDateSlot: Schema.Attribute.String & Schema.Attribute.Required;
+    scheduleTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    ScheduleCard: Schema.Attribute.Component<'content-card.schedules', true>;
+    faqPara: Schema.Attribute.Text;
+    faqLinkText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mini-meta-tour-day.mini-meta-tour-day'
     >;
   };
 }
@@ -1004,7 +1081,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::a-typical-day.a-typical-day': ApiATypicalDayATypicalDay;
       'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
+      'api::family-camp.family-camp': ApiFamilyCampFamilyCamp;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
       'api::why-marimeta.why-marimeta': ApiWhyMarimetaWhyMarimeta;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

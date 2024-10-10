@@ -13,19 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "bannerImg": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "bannerHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "bannerSubHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "descriptionTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "imageWithTimeAndTitle": {
       "displayName": "dayImage",

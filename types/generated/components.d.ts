@@ -45,6 +45,32 @@ export interface ContentCardSessionCards extends Struct.ComponentSchema {
   };
 }
 
+export interface ContentCardSchedules extends Struct.ComponentSchema {
+  collectionName: 'components_content_card_schedules';
+  info: {
+    displayName: 'Schedules';
+    description: '';
+  };
+  attributes: {
+    img: Schema.Attribute.String & Schema.Attribute.Required;
+    time: Schema.Attribute.Time & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.String;
+  };
+}
+
+export interface ContentCardImageCard extends Struct.ComponentSchema {
+  collectionName: 'components_content_card_image_cards';
+  info: {
+    displayName: 'imageCard';
+    description: '';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Text;
+  };
+}
+
 export interface ATypicalDayDayImage extends Struct.ComponentSchema {
   collectionName: 'components_a_typical_day_day_images';
   info: {
@@ -52,9 +78,9 @@ export interface ATypicalDayDayImage extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    time: Schema.Attribute.Time;
-    title: Schema.Attribute.String;
-    image: Schema.Attribute.String;
+    time: Schema.Attribute.Time & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -65,6 +91,8 @@ declare module '@strapi/strapi' {
       'price.service-and-price': PriceServiceAndPrice;
       'price.canteen-and-laundry': PriceCanteenAndLaundry;
       'content-card.session-cards': ContentCardSessionCards;
+      'content-card.schedules': ContentCardSchedules;
+      'content-card.image-card': ContentCardImageCard;
       'a-typical-day.day-image': ATypicalDayDayImage;
     }
   }

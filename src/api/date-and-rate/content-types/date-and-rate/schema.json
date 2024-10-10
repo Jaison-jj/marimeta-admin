@@ -59,6 +59,18 @@
     },
     "email": {
       "type": "email"
+    },
+    "reachOutToUsText": {
+      "type": "text"
+    },
+    "footerBannerImgUrl": {
+      "type": "string"
+    },
+    "footerHeading": {
+      "type": "string"
+    },
+    "footerDescription": {
+      "type": "text"
     }
   }
 }
