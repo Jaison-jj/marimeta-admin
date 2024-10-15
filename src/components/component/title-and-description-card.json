@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_title_and_description_cards",
+  "info": {
+    "displayName": "titleAndDescriptionCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

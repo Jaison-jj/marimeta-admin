@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_ct_abuttons",
+  "info": {
+    "displayName": "CTAbutton"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

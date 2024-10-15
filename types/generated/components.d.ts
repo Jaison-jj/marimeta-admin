@@ -1,99 +1,50 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface WhyMarimetaImgWithHeading extends Struct.ComponentSchema {
-  collectionName: 'components_why_marimeta_img_with_headings';
+export interface ComponentTitleAndDescriptionCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_title_and_description_cards';
   info: {
-    displayName: 'imgWithHeading';
+    displayName: 'titleAndDescriptionCard';
   };
   attributes: {
-    heading: Schema.Attribute.String;
-    imgUrl: Schema.Attribute.String;
-  };
-}
-
-export interface PriceServiceAndPrice extends Struct.ComponentSchema {
-  collectionName: 'components_price_service_and_prices';
-  info: {
-    displayName: 'serviceAndPrice';
-  };
-  attributes: {
-    service: Schema.Attribute.String;
-    price: Schema.Attribute.String;
-  };
-}
-
-export interface PriceCanteenAndLaundry extends Struct.ComponentSchema {
-  collectionName: 'components_price_canteen_and_laundries';
-  info: {
-    displayName: 'canteenAndLaundry';
-  };
-  attributes: {
-    serviceName: Schema.Attribute.String;
-    price: Schema.Attribute.Integer;
-  };
-}
-
-export interface ContentCardSessionCards extends Struct.ComponentSchema {
-  collectionName: 'components_content_card_session_cards';
-  info: {
-    displayName: 'sessionCards';
-  };
-  attributes: {
-    img: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    cost: Schema.Attribute.BigInteger;
-  };
-}
-
-export interface ContentCardSchedules extends Struct.ComponentSchema {
-  collectionName: 'components_content_card_schedules';
-  info: {
-    displayName: 'Schedules';
-    description: '';
-  };
-  attributes: {
-    img: Schema.Attribute.String & Schema.Attribute.Required;
-    time: Schema.Attribute.Time & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
-export interface ContentCardImageCard extends Struct.ComponentSchema {
-  collectionName: 'components_content_card_image_cards';
+export interface ComponentHero extends Struct.ComponentSchema {
+  collectionName: 'components_component_heroes';
   info: {
-    displayName: 'imageCard';
+    displayName: 'hero';
     description: '';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Text;
+    heading1: Schema.Attribute.String & Schema.Attribute.Required;
+    heading2: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    videoUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    button1: Schema.Attribute.Component<'component.ct-abutton', false>;
+    button2: Schema.Attribute.Component<'component.ct-abutton', false>;
   };
 }
 
-export interface ATypicalDayDayImage extends Struct.ComponentSchema {
-  collectionName: 'components_a_typical_day_day_images';
+export interface ComponentCtAbutton extends Struct.ComponentSchema {
+  collectionName: 'components_component_ct_abuttons';
   info: {
-    displayName: 'dayImage';
-    description: '';
+    displayName: 'CTAbutton';
   };
   attributes: {
-    time: Schema.Attribute.Time & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'why-marimeta.img-with-heading': WhyMarimetaImgWithHeading;
-      'price.service-and-price': PriceServiceAndPrice;
-      'price.canteen-and-laundry': PriceCanteenAndLaundry;
-      'content-card.session-cards': ContentCardSessionCards;
-      'content-card.schedules': ContentCardSchedules;
-      'content-card.image-card': ContentCardImageCard;
-      'a-typical-day.day-image': ATypicalDayDayImage;
+      'component.title-and-description-card': ComponentTitleAndDescriptionCard;
+      'component.hero': ComponentHero;
+      'component.ct-abutton': ComponentCtAbutton;
     }
   }
 }
