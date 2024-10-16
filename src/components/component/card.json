@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_component_cards",
+  "info": {
+    "displayName": "card",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    }
+  }
+}

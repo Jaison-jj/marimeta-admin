@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_component_about_marimeta_campers",
+  "info": {
+    "displayName": "aboutMarimetaCampers"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "button": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

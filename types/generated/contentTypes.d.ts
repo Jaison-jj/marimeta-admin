@@ -17,6 +17,15 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'component.title-and-description-card',
       false
     >;
+    aboutMarimeta: Schema.Attribute.Component<
+      'component.about-marimeta-campers',
+      false
+    >;
+    ourFacilitiesCards: Schema.Attribute.Component<'component.card', true>;
+    ourFacilitiesParent: Schema.Attribute.Component<
+      'component.parent-card',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
