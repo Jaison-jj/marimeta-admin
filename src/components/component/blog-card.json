@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_blog_cards",
+  "info": {
+    "displayName": "blogCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

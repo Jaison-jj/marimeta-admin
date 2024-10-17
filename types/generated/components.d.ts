@@ -151,6 +151,17 @@ export interface ComponentCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentBlogCard extends Struct.ComponentSchema {
+  collectionName: 'components_component_blog_cards';
+  info: {
+    displayName: 'blogCard';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    date: Schema.Attribute.Date;
+  };
+}
+
 export interface ComponentAboutMarimetaCampers extends Struct.ComponentSchema {
   collectionName: 'components_component_about_marimeta_campers';
   info: {
@@ -178,6 +189,7 @@ declare module '@strapi/strapi' {
       'component.ct-abutton': ComponentCtAbutton;
       'component.contact-us': ComponentContactUs;
       'component.card': ComponentCard;
+      'component.blog-card': ComponentBlogCard;
       'component.about-marimeta-campers': ComponentAboutMarimetaCampers;
     }
   }

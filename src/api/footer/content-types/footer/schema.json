@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "string"
+    },
+    "blogsTitle": {
+      "type": "string"
+    },
+    "contactsTitle": {
+      "type": "string"
+    },
+    "socialTitle": {
+      "type": "string"
+    },
+    "blogs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.blog-card"
+    }
+  }
+}
