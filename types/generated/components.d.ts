@@ -12,6 +12,34 @@ export interface ComponentTitleAndDescriptionCard
   };
 }
 
+export interface ComponentTimer extends Struct.ComponentSchema {
+  collectionName: 'components_component_timers';
+  info: {
+    displayName: 'countDown';
+    description: '';
+  };
+  attributes: {
+    titleMessage: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    session: Schema.Attribute.Component<'component.session-and-date', true>;
+    countDownDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    duration: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentSessionAndDate extends Struct.ComponentSchema {
+  collectionName: 'components_component_session_and_dates';
+  info: {
+    displayName: 'sessionAndDate';
+    description: '';
+  };
+  attributes: {
+    type: Schema.Attribute.String & Schema.Attribute.Required;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentParentCard extends Struct.ComponentSchema {
   collectionName: 'components_component_parent_cards';
   info: {
@@ -84,6 +112,8 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
+      'component.timer': ComponentTimer;
+      'component.session-and-date': ComponentSessionAndDate;
       'component.parent-card': ComponentParentCard;
       'component.hero': ComponentHero;
       'component.ct-abutton': ComponentCtAbutton;

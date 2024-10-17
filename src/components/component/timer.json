@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_component_timers",
+  "info": {
+    "displayName": "countDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleMessage": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "session": {
+      "displayName": "sessionAndDate",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.session-and-date"
+    },
+    "countDownDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

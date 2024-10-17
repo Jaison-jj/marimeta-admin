@@ -26,6 +26,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'component.parent-card',
       false
     >;
+    countDownTimer: Schema.Attribute.Component<'component.timer', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

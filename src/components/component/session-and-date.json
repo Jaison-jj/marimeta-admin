@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_session_and_dates",
+  "info": {
+    "displayName": "sessionAndDate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
