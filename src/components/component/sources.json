@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_component_sources",
+  "info": {
+    "displayName": "sources"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

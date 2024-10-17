@@ -27,6 +27,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     countDownTimer: Schema.Attribute.Component<'component.timer', false>;
+    gallery: Schema.Attribute.Component<'component.gallery', false>;
+    galleryMedia: Schema.Attribute.DynamicZone<['component.video-or-image']>;
+    joinOurMarimetaStaff: Schema.Attribute.Component<
+      'component.about-marimeta-campers',
+      false
+    >;
+    contactUs: Schema.Attribute.Component<'component.contact-us', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -1,5 +1,23 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface ComponentVideoOrImage extends Struct.ComponentSchema {
+  collectionName: 'components_component_video_or_images';
+  info: {
+    displayName: 'videoOrImage';
+    description: '';
+  };
+  attributes: {
+    videoUrl: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'https://ik.imagekit.io/cf172nbiz/Website%20B%20Roll%20(1).mp4?updatedAt=1728981193691'>;
+    isImage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    thumpNail: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://ik.imagekit.io/cf172nbiz/heroVideoPreviewImage.png?updatedAt=1728984462129'>;
+  };
+}
+
 export interface ComponentTitleAndDescriptionCard
   extends Struct.ComponentSchema {
   collectionName: 'components_component_title_and_description_cards';
@@ -25,6 +43,16 @@ export interface ComponentTimer extends Struct.ComponentSchema {
     countDownDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
     duration: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentSources extends Struct.ComponentSchema {
+  collectionName: 'components_component_sources';
+  info: {
+    displayName: 'sources';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
   };
 }
 
@@ -69,6 +97,18 @@ export interface ComponentHero extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentGallery extends Struct.ComponentSchema {
+  collectionName: 'components_component_galleries';
+  info: {
+    displayName: 'gallery';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+  };
+}
+
 export interface ComponentCtAbutton extends Struct.ComponentSchema {
   collectionName: 'components_component_ct_abuttons';
   info: {
@@ -77,6 +117,22 @@ export interface ComponentCtAbutton extends Struct.ComponentSchema {
   attributes: {
     text: Schema.Attribute.String & Schema.Attribute.Required;
     link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentContactUs extends Struct.ComponentSchema {
+  collectionName: 'components_component_contactuses';
+  info: {
+    displayName: 'contactUs';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    subDescription: Schema.Attribute.Text;
+    phone: Schema.Attribute.BigInteger;
+    email: Schema.Attribute.Email;
+    image: Schema.Attribute.String;
+    countactUsSources: Schema.Attribute.Component<'component.sources', true>;
   };
 }
 
@@ -111,12 +167,16 @@ export interface ComponentAboutMarimetaCampers extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'component.video-or-image': ComponentVideoOrImage;
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
       'component.timer': ComponentTimer;
+      'component.sources': ComponentSources;
       'component.session-and-date': ComponentSessionAndDate;
       'component.parent-card': ComponentParentCard;
       'component.hero': ComponentHero;
+      'component.gallery': ComponentGallery;
       'component.ct-abutton': ComponentCtAbutton;
+      'component.contact-us': ComponentContactUs;
       'component.card': ComponentCard;
       'component.about-marimeta-campers': ComponentAboutMarimetaCampers;
     }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_galleries",
+  "info": {
+    "displayName": "gallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

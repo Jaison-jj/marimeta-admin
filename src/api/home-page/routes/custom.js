@@ -1,9 +1,9 @@
 module.exports = {
     routes:[
         {
-            method:'GET',
-            path:'/custom',
-            handler:'home-page.customAction ',
+            method:'POST',
+            path:'/contact-us',
+            handler:'home-page.contactUs ',
             config:{
                 auth:false
             }

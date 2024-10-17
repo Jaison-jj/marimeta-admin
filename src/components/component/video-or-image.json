@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_component_video_or_images",
+  "info": {
+    "displayName": "videoOrImage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "videoUrl": {
+      "type": "string",
+      "default": "https://ik.imagekit.io/cf172nbiz/Website%20B%20Roll%20(1).mp4?updatedAt=1728981193691"
+    },
+    "isImage": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "thumpNail": {
+      "type": "string",
+      "required": true,
+      "default": "https://ik.imagekit.io/cf172nbiz/heroVideoPreviewImage.png?updatedAt=1728984462129"
+    }
+  }
+}

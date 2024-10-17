@@ -42,6 +42,27 @@
       "type": "component",
       "repeatable": false,
       "component": "component.timer"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.gallery"
+    },
+    "galleryMedia": {
+      "type": "dynamiczone",
+      "components": [
+        "component.video-or-image"
+      ]
+    },
+    "joinOurMarimetaStaff": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.about-marimeta-campers"
+    },
+    "contactUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.contact-us"
     }
   }
 }

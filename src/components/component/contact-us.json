@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_component_contactuses",
+  "info": {
+    "displayName": "contactUs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subDescription": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "image": {
+      "type": "string"
+    },
+    "countactUsSources": {
+      "displayName": "sources",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.sources"
+    }
+  }
+}
