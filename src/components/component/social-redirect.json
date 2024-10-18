@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_social_redirects",
+  "info": {
+    "displayName": "socialRedirect"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

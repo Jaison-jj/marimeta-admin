@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_socials",
+  "info": {
+    "displayName": "socials"
+  },
+  "options": {},
+  "attributes": {
+    "socialItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.social-redirect"
+    },
+    "socialsTitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

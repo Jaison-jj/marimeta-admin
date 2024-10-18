@@ -28,6 +28,16 @@
       "type": "component",
       "repeatable": true,
       "component": "component.blog-card"
+    },
+    "getInTouch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.get-in-touch"
+    },
+    "followUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.socials"
     }
   }
 }

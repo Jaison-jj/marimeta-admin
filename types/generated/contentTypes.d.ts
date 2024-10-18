@@ -17,6 +17,8 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     contactsTitle: Schema.Attribute.String;
     socialTitle: Schema.Attribute.String;
     blogs: Schema.Attribute.Component<'component.blog-card', true>;
+    getInTouch: Schema.Attribute.Component<'component.get-in-touch', false>;
+    followUs: Schema.Attribute.Component<'component.socials', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_component_get_in_touches",
+  "info": {
+    "displayName": "getInTouch"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "required": true,
+      "type": "biginteger"
+    },
+    "address1Title": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "text",
+      "required": true
+    },
+    "address2Title": {
+      "type": "string",
+      "required": true
+    },
+    "address2": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

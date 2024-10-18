@@ -56,6 +56,28 @@ export interface ComponentSources extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentSocials extends Struct.ComponentSchema {
+  collectionName: 'components_component_socials';
+  info: {
+    displayName: 'socials';
+  };
+  attributes: {
+    socialItem: Schema.Attribute.Component<'component.social-redirect', true>;
+    socialsTitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentSocialRedirect extends Struct.ComponentSchema {
+  collectionName: 'components_component_social_redirects';
+  info: {
+    displayName: 'socialRedirect';
+  };
+  attributes: {
+    icon: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentSessionAndDate extends Struct.ComponentSchema {
   collectionName: 'components_component_session_and_dates';
   info: {
@@ -94,6 +116,21 @@ export interface ComponentHero extends Struct.ComponentSchema {
     videoUrl: Schema.Attribute.String & Schema.Attribute.Required;
     button1: Schema.Attribute.Component<'component.ct-abutton', false>;
     button2: Schema.Attribute.Component<'component.ct-abutton', false>;
+  };
+}
+
+export interface ComponentGetInTouch extends Struct.ComponentSchema {
+  collectionName: 'components_component_get_in_touches';
+  info: {
+    displayName: 'getInTouch';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    address1Title: Schema.Attribute.String;
+    address1: Schema.Attribute.Text & Schema.Attribute.Required;
+    address2Title: Schema.Attribute.String & Schema.Attribute.Required;
+    address2: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -182,9 +219,12 @@ declare module '@strapi/strapi' {
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
       'component.timer': ComponentTimer;
       'component.sources': ComponentSources;
+      'component.socials': ComponentSocials;
+      'component.social-redirect': ComponentSocialRedirect;
       'component.session-and-date': ComponentSessionAndDate;
       'component.parent-card': ComponentParentCard;
       'component.hero': ComponentHero;
+      'component.get-in-touch': ComponentGetInTouch;
       'component.gallery': ComponentGallery;
       'component.ct-abutton': ComponentCtAbutton;
       'component.contact-us': ComponentContactUs;
