@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "staff_testimonials",
+  "info": {
+    "singularName": "staff-testimonial",
+    "pluralName": "staff-testimonials",
+    "displayName": "staffTestimonial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-desc"
+    }
+  }
+}

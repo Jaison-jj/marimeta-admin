@@ -1,17 +1,20 @@
 {
-  "collectionName": "components_component_title_and_description_cards",
+  "collectionName": "components_component_dogs",
   "info": {
-    "displayName": "titleAndDescriptionCard",
-    "description": ""
+    "displayName": "dog"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string",
       "required": true
     },
     "description": {
       "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "string",
       "required": true
     }
   }

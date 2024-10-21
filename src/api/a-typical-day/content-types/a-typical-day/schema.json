@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "a_typical_days",
+  "info": {
+    "singularName": "a-typical-day",
+    "pluralName": "a-typical-days",
+    "displayName": "aTypicalDay",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reasons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-desc"
+    }
+  }
+}

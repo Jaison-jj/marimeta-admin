@@ -1,85 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiFooterFooter extends Struct.SingleTypeSchema {
-  collectionName: 'footers';
-  info: {
-    singularName: 'footer';
-    pluralName: 'footers';
-    displayName: 'footer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    logo: Schema.Attribute.String;
-    blogsTitle: Schema.Attribute.String;
-    contactsTitle: Schema.Attribute.String;
-    socialTitle: Schema.Attribute.String;
-    blogs: Schema.Attribute.Component<'component.blog-card', true>;
-    getInTouch: Schema.Attribute.Component<'component.get-in-touch', false>;
-    followUs: Schema.Attribute.Component<'component.socials', false>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
-  };
-}
-
-export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'HomePage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    heroSection: Schema.Attribute.Component<'component.hero', false>;
-    whatIsMarimeta: Schema.Attribute.Component<
-      'component.title-and-description-card',
-      false
-    >;
-    aboutMarimeta: Schema.Attribute.Component<
-      'component.about-marimeta-campers',
-      false
-    >;
-    ourFacilitiesCards: Schema.Attribute.Component<'component.card', true>;
-    ourFacilitiesParent: Schema.Attribute.Component<
-      'component.parent-card',
-      false
-    >;
-    countDownTimer: Schema.Attribute.Component<'component.timer', false>;
-    gallery: Schema.Attribute.Component<'component.gallery', false>;
-    galleryMedia: Schema.Attribute.DynamicZone<['component.video-or-image']>;
-    joinOurMarimetaStaff: Schema.Attribute.Component<
-      'component.about-marimeta-campers',
-      false
-    >;
-    contactUs: Schema.Attribute.Component<'component.contact-us', false>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-page.home-page'
-    >;
-  };
-}
-
 export interface PluginUploadFile extends Struct.CollectionTypeSchema {
   collectionName: 'files';
   info: {
@@ -565,6 +485,334 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiATypicalDayATypicalDay extends Struct.SingleTypeSchema {
+  collectionName: 'a_typical_days';
+  info: {
+    singularName: 'a-typical-day';
+    pluralName: 'a-typical-days';
+    displayName: 'aTypicalDay';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    heading: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    reasons: Schema.Attribute.Component<'component.image-title-desc', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::a-typical-day.a-typical-day'
+    >;
+  };
+}
+
+export interface ApiCamperTestimonialCamperTestimonial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'camper_testimonials';
+  info: {
+    singularName: 'camper-testimonial';
+    pluralName: 'camper-testimonials';
+    displayName: 'camperTestimonial';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    testimonials: Schema.Attribute.Component<
+      'component.image-title-desc',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::camper-testimonial.camper-testimonial'
+    >;
+  };
+}
+
+export interface ApiDateAndRateDateAndRate extends Struct.SingleTypeSchema {
+  collectionName: 'date_and_rates';
+  info: {
+    singularName: 'date-and-rate';
+    pluralName: 'date-and-rates';
+    displayName: 'dateAndRate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    sessionTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    visitingSchedule: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    sessions: Schema.Attribute.Component<'component.price-card', true>;
+    othersTitle: Schema.Attribute.String;
+    services: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      true
+    >;
+    additionalCostTitle: Schema.Attribute.String;
+    phone: Schema.Attribute.BigInteger;
+    email: Schema.Attribute.Email;
+    footerImage: Schema.Attribute.String;
+    covidTitle: Schema.Attribute.String;
+    covidDescription: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::date-and-rate.date-and-rate'
+    >;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logo: Schema.Attribute.String;
+    blogsTitle: Schema.Attribute.String;
+    contactsTitle: Schema.Attribute.String;
+    socialTitle: Schema.Attribute.String;
+    blogs: Schema.Attribute.Component<'component.blog-card', true>;
+    getInTouch: Schema.Attribute.Component<'component.get-in-touch', false>;
+    followUs: Schema.Attribute.Component<'component.socials', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'HomePage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heroSection: Schema.Attribute.Component<'component.hero', false>;
+    whatIsMarimeta: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    aboutMarimeta: Schema.Attribute.Component<
+      'component.about-marimeta-campers',
+      false
+    >;
+    ourFacilitiesCards: Schema.Attribute.Component<'component.card', true>;
+    ourFacilitiesParent: Schema.Attribute.Component<
+      'component.parent-card',
+      false
+    >;
+    countDownTimer: Schema.Attribute.Component<'component.timer', false>;
+    gallery: Schema.Attribute.Component<'component.gallery', false>;
+    galleryMedia: Schema.Attribute.DynamicZone<['component.video-or-image']>;
+    joinOurMarimetaStaff: Schema.Attribute.Component<
+      'component.about-marimeta-campers',
+      false
+    >;
+    contactUs: Schema.Attribute.Component<'component.contact-us', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    >;
+  };
+}
+
+export interface ApiMeetTheDirectorMeetTheDirector
+  extends Struct.SingleTypeSchema {
+  collectionName: 'meet_the_directors';
+  info: {
+    singularName: 'meet-the-director';
+    pluralName: 'meet-the-directors';
+    displayName: 'meetTheDirector';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    directors: Schema.Attribute.Component<'component.director', false>;
+    asstDirector: Schema.Attribute.Component<'component.director', false>;
+    directorOrOperations: Schema.Attribute.Component<
+      'component.director',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::meet-the-director.meet-the-director'
+    >;
+  };
+}
+
+export interface ApiMiniMetaTourDayMiniMetaTourDay
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mini_meta_tour_days';
+  info: {
+    singularName: 'mini-meta-tour-day';
+    pluralName: 'mini-meta-tour-days';
+    displayName: 'miniMetaTourDay';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    signUpBanner: Schema.Attribute.Component<'component.sub-banner', false> &
+      Schema.Attribute.Required;
+    generalDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    scheduleTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    schedules: Schema.Attribute.Component<'component.image-title-desc', true>;
+    faqText: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mini-meta-tour-day.mini-meta-tour-day'
+    >;
+  };
+}
+
+export interface ApiStaffTestimonialStaffTestimonial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'staff_testimonials';
+  info: {
+    singularName: 'staff-testimonial';
+    pluralName: 'staff-testimonials';
+    displayName: 'staffTestimonial';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    testimonials: Schema.Attribute.Component<
+      'component.image-title-desc',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::staff-testimonial.staff-testimonial'
+    >;
+  };
+}
+
+export interface ApiWhyChooseMarimetaWhyChooseMarimeta
+  extends Struct.SingleTypeSchema {
+  collectionName: 'why_choose_marimetas';
+  info: {
+    singularName: 'why-choose-marimeta';
+    pluralName: 'why-choose-marimetas';
+    displayName: 'WhyChooseMarimeta';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    description: Schema.Attribute.Text;
+    reasonsHeading: Schema.Attribute.String;
+    reasonsGrid: Schema.Attribute.Component<'component.image-title-desc', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-choose-marimeta.why-choose-marimeta'
+    >;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -930,8 +1178,6 @@ export interface AdminTransferTokenPermission
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
-      'api::footer.footer': ApiFooterFooter;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
@@ -942,6 +1188,15 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::a-typical-day.a-typical-day': ApiATypicalDayATypicalDay;
+      'api::camper-testimonial.camper-testimonial': ApiCamperTestimonialCamperTestimonial;
+      'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
+      'api::footer.footer': ApiFooterFooter;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;
+      'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
+      'api::staff-testimonial.staff-testimonial': ApiStaffTestimonialStaffTestimonial;
+      'api::why-choose-marimeta.why-choose-marimeta': ApiWhyChooseMarimetaWhyChooseMarimeta;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

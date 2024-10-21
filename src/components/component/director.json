@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_component_directors",
+  "info": {
+    "displayName": "director",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "footer": {
+      "type": "text"
+    },
+    "email1": {
+      "type": "email",
+      "required": true
+    },
+    "email2": {
+      "type": "email"
+    },
+    "descriptions": {
+      "displayName": "description",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.description"
+    }
+  }
+}

@@ -23,6 +23,7 @@ export interface ComponentTitleAndDescriptionCard
   collectionName: 'components_component_title_and_description_cards';
   info: {
     displayName: 'titleAndDescriptionCard';
+    description: '';
   };
   attributes: {
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -42,6 +43,21 @@ export interface ComponentTimer extends Struct.ComponentSchema {
     session: Schema.Attribute.Component<'component.session-and-date', true>;
     countDownDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
     duration: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentSubBanner extends Struct.ComponentSchema {
+  collectionName: 'components_component_sub_banners';
+  info: {
+    displayName: 'subBanner';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    button: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    dates: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -90,6 +106,20 @@ export interface ComponentSessionAndDate extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentPriceCard extends Struct.ComponentSchema {
+  collectionName: 'components_component_price_cards';
+  info: {
+    displayName: 'priceCard';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    price: Schema.Attribute.BigInteger;
+    image: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentParentCard extends Struct.ComponentSchema {
   collectionName: 'components_component_parent_cards';
   info: {
@@ -100,6 +130,33 @@ export interface ComponentParentCard extends Struct.ComponentSchema {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentPageBanner extends Struct.ComponentSchema {
+  collectionName: 'components_component_page_banners';
+  info: {
+    displayName: 'pageBanner';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_title_descs';
+  info: {
+    displayName: 'imageTitleDesc';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    image: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    subDescription: Schema.Attribute.Text;
   };
 }
 
@@ -143,6 +200,45 @@ export interface ComponentGallery extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+  };
+}
+
+export interface ComponentDog extends Struct.ComponentSchema {
+  collectionName: 'components_component_dogs';
+  info: {
+    displayName: 'dog';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentDirector extends Struct.ComponentSchema {
+  collectionName: 'components_component_directors';
+  info: {
+    displayName: 'director';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+    footer: Schema.Attribute.Text;
+    email1: Schema.Attribute.Email & Schema.Attribute.Required;
+    email2: Schema.Attribute.Email;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
+export interface ComponentDescription extends Struct.ComponentSchema {
+  collectionName: 'components_component_descriptions';
+  info: {
+    displayName: 'description';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
   };
 }
 
@@ -218,14 +314,21 @@ declare module '@strapi/strapi' {
       'component.video-or-image': ComponentVideoOrImage;
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
       'component.timer': ComponentTimer;
+      'component.sub-banner': ComponentSubBanner;
       'component.sources': ComponentSources;
       'component.socials': ComponentSocials;
       'component.social-redirect': ComponentSocialRedirect;
       'component.session-and-date': ComponentSessionAndDate;
+      'component.price-card': ComponentPriceCard;
       'component.parent-card': ComponentParentCard;
+      'component.page-banner': ComponentPageBanner;
+      'component.image-title-desc': ComponentImageTitleDesc;
       'component.hero': ComponentHero;
       'component.get-in-touch': ComponentGetInTouch;
       'component.gallery': ComponentGallery;
+      'component.dog': ComponentDog;
+      'component.director': ComponentDirector;
+      'component.description': ComponentDescription;
       'component.ct-abutton': ComponentCtAbutton;
       'component.contact-us': ComponentContactUs;
       'component.card': ComponentCard;

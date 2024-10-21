@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "meet_the_directors",
+  "info": {
+    "singularName": "meet-the-director",
+    "pluralName": "meet-the-directors",
+    "displayName": "meetTheDirector",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "directors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.director"
+    },
+    "asstDirector": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.director"
+    },
+    "directorOrOperations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.director"
+    }
+  }
+}

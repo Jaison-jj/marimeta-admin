@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "mini_meta_tour_days",
+  "info": {
+    "singularName": "mini-meta-tour-day",
+    "pluralName": "mini-meta-tour-days",
+    "displayName": "miniMetaTourDay",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "signUpBanner": {
+      "displayName": "subBanner",
+      "type": "component",
+      "repeatable": false,
+      "component": "component.sub-banner",
+      "required": true
+    },
+    "generalDescription": {
+      "type": "text",
+      "required": true
+    },
+    "scheduleTitle": {
+      "type": "string",
+      "required": true
+    },
+    "schedules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-desc"
+    },
+    "faqText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

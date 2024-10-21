@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_choose_marimetas",
+  "info": {
+    "singularName": "why-choose-marimeta",
+    "pluralName": "why-choose-marimetas",
+    "displayName": "WhyChooseMarimeta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reasonsHeading": {
+      "type": "string"
+    },
+    "reasonsGrid": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-desc"
+    }
+  }
+}

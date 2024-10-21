@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "date_and_rates",
+  "info": {
+    "singularName": "date-and-rate",
+    "pluralName": "date-and-rates",
+    "displayName": "dateAndRate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "sessionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "visitingSchedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    },
+    "sessions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.price-card"
+    },
+    "othersTitle": {
+      "type": "string"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.title-and-description-card"
+    },
+    "additionalCostTitle": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "footerImage": {
+      "type": "string"
+    },
+    "covidTitle": {
+      "type": "string"
+    },
+    "covidDescription": {
+      "type": "text"
+    }
+  }
+}

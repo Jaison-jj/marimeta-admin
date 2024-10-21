@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_price_cards",
+  "info": {
+    "displayName": "priceCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}

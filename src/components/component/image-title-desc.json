@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_image_title_descs",
+  "info": {
+    "displayName": "imageTitleDesc",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "subDescription": {
+      "type": "text"
+    }
+  }
+}
