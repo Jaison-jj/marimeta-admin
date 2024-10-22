@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_faqs",
+  "info": {
+    "singularName": "all-faq",
+    "pluralName": "all-faqs",
+    "displayName": "allFaq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.title-description-type"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    }
+  }
+}

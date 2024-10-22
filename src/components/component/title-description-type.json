@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_title_description_types",
+  "info": {
+    "displayName": "titleDescriptionType"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "isParentFaq": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

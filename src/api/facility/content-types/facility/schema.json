@@ -1,0 +1,81 @@
+{
+  "kind": "singleType",
+  "collectionName": "facilities",
+  "info": {
+    "singularName": "facility",
+    "pluralName": "facilities",
+    "displayName": "facility",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "history": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "cabins": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "videoBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.video-card"
+    },
+    "stay": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.titles-and-descriptions"
+    },
+    "food": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "health": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "activities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "sport": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "waterfront": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-descriptions-images"
+    },
+    "staff": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-descriptions-images"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    }
+  }
+}

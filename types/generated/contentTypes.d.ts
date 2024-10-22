@@ -516,6 +516,39 @@ export interface ApiATypicalDayATypicalDay extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAllFaqAllFaq extends Struct.SingleTypeSchema {
+  collectionName: 'all_faqs';
+  info: {
+    singularName: 'all-faq';
+    pluralName: 'all-faqs';
+    displayName: 'allFaq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faq: Schema.Attribute.Component<'component.title-description-type', true>;
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    head: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::all-faq.all-faq'
+    >;
+  };
+}
+
 export interface ApiCamperTestimonialCamperTestimonial
   extends Struct.SingleTypeSchema {
   collectionName: 'camper_testimonials';
@@ -592,6 +625,79 @@ export interface ApiDateAndRateDateAndRate extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::date-and-rate.date-and-rate'
+    >;
+  };
+}
+
+export interface ApiFacilityFacility extends Struct.SingleTypeSchema {
+  collectionName: 'facilities';
+  info: {
+    singularName: 'facility';
+    pluralName: 'facilities';
+    displayName: 'facility';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    history: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    cabins: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    videoBanner: Schema.Attribute.Component<'component.video-card', false>;
+    stay: Schema.Attribute.Component<
+      'component.titles-and-descriptions',
+      false
+    >;
+    food: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    health: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    activities: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    sport: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    waterfront: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    about: Schema.Attribute.Component<
+      'component.title-descriptions-images',
+      false
+    >;
+    staff: Schema.Attribute.Component<
+      'component.title-descriptions-images',
+      false
+    >;
+    footer: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::facility.facility'
     >;
   };
 }
@@ -742,6 +848,37 @@ export interface ApiMiniMetaTourDayMiniMetaTourDay
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::mini-meta-tour-day.mini-meta-tour-day'
+    >;
+  };
+}
+
+export interface ApiOurExcitingActivitieOurExcitingActivitie
+  extends Struct.SingleTypeSchema {
+  collectionName: 'our_exciting_activities';
+  info: {
+    singularName: 'our-exciting-activitie';
+    pluralName: 'our-exciting-activities';
+    displayName: 'ourExcitingActivitie';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    filters: Schema.Attribute.Component<'component.button', true>;
+    activities: Schema.Attribute.Component<'component.image-title-desc', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-exciting-activitie.our-exciting-activitie'
     >;
   };
 }
@@ -1189,12 +1326,15 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::a-typical-day.a-typical-day': ApiATypicalDayATypicalDay;
+      'api::all-faq.all-faq': ApiAllFaqAllFaq;
       'api::camper-testimonial.camper-testimonial': ApiCamperTestimonialCamperTestimonial;
       'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
+      'api::facility.facility': ApiFacilityFacility;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;
       'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
+      'api::our-exciting-activitie.our-exciting-activitie': ApiOurExcitingActivitieOurExcitingActivitie;
       'api::staff-testimonial.staff-testimonial': ApiStaffTestimonialStaffTestimonial;
       'api::why-choose-marimeta.why-choose-marimeta': ApiWhyChooseMarimetaWhyChooseMarimeta;
       'admin::permission': AdminPermission;

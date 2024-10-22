@@ -1,12 +1,14 @@
 {
   "collectionName": "components_component_descriptions",
   "info": {
-    "displayName": "description"
+    "displayName": "description",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

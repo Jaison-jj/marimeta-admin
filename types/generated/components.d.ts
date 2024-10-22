@@ -18,6 +18,59 @@ export interface ComponentVideoOrImage extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentVideoCard extends Struct.ComponentSchema {
+  collectionName: 'components_component_video_cards';
+  info: {
+    displayName: 'videoCard';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    videourl: Schema.Attribute.String & Schema.Attribute.Required;
+    subDescriptions: Schema.Attribute.Component<'component.description', true>;
+    link: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentTitlesAndDescriptions extends Struct.ComponentSchema {
+  collectionName: 'components_component_titles_and_descriptions';
+  info: {
+    displayName: 'titlesAndDescriptions';
+  };
+  attributes: {
+    titles: Schema.Attribute.Component<'component.description', true>;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
+export interface ComponentTitleDescriptionsImages
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_title_descriptions_images';
+  info: {
+    displayName: 'titleDescriptionsImages';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+    images: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
+export interface ComponentTitleDescriptionType extends Struct.ComponentSchema {
+  collectionName: 'components_component_title_description_types';
+  info: {
+    displayName: 'titleDescriptionType';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    isParentFaq: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ComponentTitleAndDescriptionCard
   extends Struct.ComponentSchema {
   collectionName: 'components_component_title_and_description_cards';
@@ -145,6 +198,19 @@ export interface ComponentPageBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentImageTitleDescriptions
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_title_descriptions';
+  info: {
+    displayName: 'imageTitleDescriptions';
+  };
+  attributes: {
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    paras: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
 export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
   collectionName: 'components_component_image_title_descs';
   info: {
@@ -153,10 +219,11 @@ export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    image: Schema.Attribute.String;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     subDescription: Schema.Attribute.Text;
+    filterType: Schema.Attribute.String;
   };
 }
 
@@ -236,9 +303,10 @@ export interface ComponentDescription extends Struct.ComponentSchema {
   collectionName: 'components_component_descriptions';
   info: {
     displayName: 'description';
+    description: '';
   };
   attributes: {
-    text: Schema.Attribute.Text;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -284,6 +352,17 @@ export interface ComponentCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentButton extends Struct.ComponentSchema {
+  collectionName: 'components_component_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentBlogCard extends Struct.ComponentSchema {
   collectionName: 'components_component_blog_cards';
   info: {
@@ -312,6 +391,10 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'component.video-or-image': ComponentVideoOrImage;
+      'component.video-card': ComponentVideoCard;
+      'component.titles-and-descriptions': ComponentTitlesAndDescriptions;
+      'component.title-descriptions-images': ComponentTitleDescriptionsImages;
+      'component.title-description-type': ComponentTitleDescriptionType;
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
       'component.timer': ComponentTimer;
       'component.sub-banner': ComponentSubBanner;
@@ -322,6 +405,7 @@ declare module '@strapi/strapi' {
       'component.price-card': ComponentPriceCard;
       'component.parent-card': ComponentParentCard;
       'component.page-banner': ComponentPageBanner;
+      'component.image-title-descriptions': ComponentImageTitleDescriptions;
       'component.image-title-desc': ComponentImageTitleDesc;
       'component.hero': ComponentHero;
       'component.get-in-touch': ComponentGetInTouch;
@@ -332,6 +416,7 @@ declare module '@strapi/strapi' {
       'component.ct-abutton': ComponentCtAbutton;
       'component.contact-us': ComponentContactUs;
       'component.card': ComponentCard;
+      'component.button': ComponentButton;
       'component.blog-card': ComponentBlogCard;
       'component.about-marimeta-campers': ComponentAboutMarimetaCampers;
     }

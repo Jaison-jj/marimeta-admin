@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_titles_and_descriptions",
+  "info": {
+    "displayName": "titlesAndDescriptions"
+  },
+  "options": {},
+  "attributes": {
+    "titles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.description"
+    },
+    "descriptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.description"
+    }
+  }
+}

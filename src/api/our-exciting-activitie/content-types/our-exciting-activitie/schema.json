@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_exciting_activities",
+  "info": {
+    "singularName": "our-exciting-activitie",
+    "pluralName": "our-exciting-activities",
+    "displayName": "ourExcitingActivitie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "filters": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.button"
+    },
+    "activities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-desc"
+    }
+  }
+}
