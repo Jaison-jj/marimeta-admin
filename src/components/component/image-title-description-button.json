@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_image_title_description_buttons",
+  "info": {
+    "displayName": "imageTitleDescriptionButton"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

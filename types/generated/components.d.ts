@@ -211,6 +211,20 @@ export interface ComponentImageTitleDescriptions
   };
 }
 
+export interface ComponentImageTitleDescriptionButton
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_title_description_buttons';
+  info: {
+    displayName: 'imageTitleDescriptionButton';
+  };
+  attributes: {
+    image: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    button: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
   collectionName: 'components_component_image_title_descs';
   info: {
@@ -406,6 +420,7 @@ declare module '@strapi/strapi' {
       'component.parent-card': ComponentParentCard;
       'component.page-banner': ComponentPageBanner;
       'component.image-title-descriptions': ComponentImageTitleDescriptions;
+      'component.image-title-description-button': ComponentImageTitleDescriptionButton;
       'component.image-title-desc': ComponentImageTitleDesc;
       'component.hero': ComponentHero;
       'component.get-in-touch': ComponentGetInTouch;

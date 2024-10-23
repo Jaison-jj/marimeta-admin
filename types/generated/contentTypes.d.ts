@@ -918,6 +918,58 @@ export interface ApiStaffTestimonialStaffTestimonial
   };
 }
 
+export interface ApiWelcomeMarimetaAlumnusWelcomeMarimetaAlumnus
+  extends Struct.SingleTypeSchema {
+  collectionName: 'welcome_marimeta_alumni';
+  info: {
+    singularName: 'welcome-marimeta-alumnus';
+    pluralName: 'welcome-marimeta-alumni';
+    displayName: 'welcomeMarimetaAlumnus';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    registration: Schema.Attribute.Component<
+      'component.image-title-description-button',
+      false
+    >;
+    schedule: Schema.Attribute.Component<
+      'component.image-title-description-button',
+      false
+    >;
+    alumniCamp: Schema.Attribute.Component<
+      'component.titles-and-descriptions',
+      false
+    >;
+    rsvp: Schema.Attribute.Component<
+      'component.titles-and-descriptions',
+      false
+    >;
+    scrapbook: Schema.Attribute.Component<
+      'component.title-descriptions-images',
+      false
+    >;
+    sendPhotos: Schema.Attribute.Component<'component.image-title-desc', false>;
+    copyrightTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    copyRightDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::welcome-marimeta-alumnus.welcome-marimeta-alumnus'
+    >;
+  };
+}
+
 export interface ApiWhyChooseMarimetaWhyChooseMarimeta
   extends Struct.SingleTypeSchema {
   collectionName: 'why_choose_marimetas';
@@ -1336,6 +1388,7 @@ declare module '@strapi/strapi' {
       'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
       'api::our-exciting-activitie.our-exciting-activitie': ApiOurExcitingActivitieOurExcitingActivitie;
       'api::staff-testimonial.staff-testimonial': ApiStaffTestimonialStaffTestimonial;
+      'api::welcome-marimeta-alumnus.welcome-marimeta-alumnus': ApiWelcomeMarimetaAlumnusWelcomeMarimetaAlumnus;
       'api::why-choose-marimeta.why-choose-marimeta': ApiWhyChooseMarimetaWhyChooseMarimeta;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

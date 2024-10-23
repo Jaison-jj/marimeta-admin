@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "welcome_marimeta_alumni",
+  "info": {
+    "singularName": "welcome-marimeta-alumnus",
+    "pluralName": "welcome-marimeta-alumni",
+    "displayName": "welcomeMarimetaAlumnus",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "registration": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-description-button"
+    },
+    "schedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-description-button"
+    },
+    "alumniCamp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.titles-and-descriptions"
+    },
+    "rsvp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.titles-and-descriptions"
+    },
+    "scrapbook": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-descriptions-images"
+    },
+    "sendPhotos": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-desc"
+    },
+    "copyrightTitle": {
+      "type": "string",
+      "required": true
+    },
+    "copyRightDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
