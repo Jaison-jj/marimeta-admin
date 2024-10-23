@@ -702,6 +702,43 @@ export interface ApiFacilityFacility extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFamilyCampFamilyCamp extends Struct.SingleTypeSchema {
+  collectionName: 'family_camps';
+  info: {
+    singularName: 'family-camp';
+    pluralName: 'family-camps';
+    displayName: 'familyCamp';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    photos: Schema.Attribute.Component<'component.image-and-description', true>;
+    postCamp: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    datesAndRates: Schema.Attribute.Component<
+      'component.title-and-description',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::family-camp.family-camp'
+    >;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1382,6 +1419,7 @@ declare module '@strapi/strapi' {
       'api::camper-testimonial.camper-testimonial': ApiCamperTestimonialCamperTestimonial;
       'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
       'api::facility.facility': ApiFacilityFacility;
+      'api::family-camp.family-camp': ApiFamilyCampFamilyCamp;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;

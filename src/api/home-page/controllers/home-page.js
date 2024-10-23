@@ -12,7 +12,6 @@ module.exports = createCoreController(
   ({ strapi }) => ({
     async contactUs(ctx) {
       try {
-        console.log(ctx.request.body);
         await strapi
           .plugin("email")
           .service("email")

@@ -71,6 +71,18 @@ export interface ComponentTitleDescriptionType extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentTitleAndDescription extends Struct.ComponentSchema {
+  collectionName: 'components_component_title_and_descriptions';
+  info: {
+    displayName: 'titleAndDescriptions';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
 export interface ComponentTitleAndDescriptionCard
   extends Struct.ComponentSchema {
   collectionName: 'components_component_title_and_description_cards';
@@ -238,6 +250,18 @@ export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     subDescription: Schema.Attribute.Text;
     filterType: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentImageAndDescription extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_and_descriptions';
+  info: {
+    displayName: 'imageAndDescription';
+    description: '';
+  };
+  attributes: {
+    image: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
   };
 }
 
@@ -409,6 +433,7 @@ declare module '@strapi/strapi' {
       'component.titles-and-descriptions': ComponentTitlesAndDescriptions;
       'component.title-descriptions-images': ComponentTitleDescriptionsImages;
       'component.title-description-type': ComponentTitleDescriptionType;
+      'component.title-and-description': ComponentTitleAndDescription;
       'component.title-and-description-card': ComponentTitleAndDescriptionCard;
       'component.timer': ComponentTimer;
       'component.sub-banner': ComponentSubBanner;
@@ -422,6 +447,7 @@ declare module '@strapi/strapi' {
       'component.image-title-descriptions': ComponentImageTitleDescriptions;
       'component.image-title-description-button': ComponentImageTitleDescriptionButton;
       'component.image-title-desc': ComponentImageTitleDesc;
+      'component.image-and-description': ComponentImageAndDescription;
       'component.hero': ComponentHero;
       'component.get-in-touch': ComponentGetInTouch;
       'component.gallery': ComponentGallery;

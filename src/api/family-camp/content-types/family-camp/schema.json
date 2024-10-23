@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "family_camps",
+  "info": {
+    "singularName": "family-camp",
+    "pluralName": "family-camps",
+    "displayName": "familyCamp",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-and-description"
+    },
+    "postCamp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    },
+    "datesAndRates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description"
+    }
+  }
+}
