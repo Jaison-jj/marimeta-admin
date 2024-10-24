@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "nav_headers",
+  "info": {
+    "singularName": "nav-header",
+    "pluralName": "nav-headers",
+    "displayName": "navHeader",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leftNavs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-with-options"
+    },
+    "rightNavs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-link"
+    }
+  }
+}

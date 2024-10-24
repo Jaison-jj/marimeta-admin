@@ -549,6 +549,32 @@ export interface ApiAllFaqAllFaq extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blogs';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+  };
+}
+
 export interface ApiCamperTestimonialCamperTestimonial
   extends Struct.SingleTypeSchema {
   collectionName: 'camper_testimonials';
@@ -724,6 +750,14 @@ export interface ApiFamilyCampFamilyCamp extends Struct.SingleTypeSchema {
       'component.title-and-description',
       false
     >;
+    additionalInfo: Schema.Attribute.Component<
+      'component.image-title-description-button',
+      false
+    >;
+    rsvp: Schema.Attribute.Component<
+      'component.image-title-description-button',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -885,6 +919,35 @@ export interface ApiMiniMetaTourDayMiniMetaTourDay
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::mini-meta-tour-day.mini-meta-tour-day'
+    >;
+  };
+}
+
+export interface ApiNavHeaderNavHeader extends Struct.SingleTypeSchema {
+  collectionName: 'nav_headers';
+  info: {
+    singularName: 'nav-header';
+    pluralName: 'nav-headers';
+    displayName: 'navHeader';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    leftNavs: Schema.Attribute.Component<'component.nav-with-options', true>;
+    rightNavs: Schema.Attribute.Component<'component.nav-link', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nav-header.nav-header'
     >;
   };
 }
@@ -1416,6 +1479,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::a-typical-day.a-typical-day': ApiATypicalDayATypicalDay;
       'api::all-faq.all-faq': ApiAllFaqAllFaq;
+      'api::blog.blog': ApiBlogBlog;
       'api::camper-testimonial.camper-testimonial': ApiCamperTestimonialCamperTestimonial;
       'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
       'api::facility.facility': ApiFacilityFacility;
@@ -1424,6 +1488,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;
       'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
+      'api::nav-header.nav-header': ApiNavHeaderNavHeader;
       'api::our-exciting-activitie.our-exciting-activitie': ApiOurExcitingActivitieOurExcitingActivitie;
       'api::staff-testimonial.staff-testimonial': ApiStaffTestimonialStaffTestimonial;
       'api::welcome-marimeta-alumnus.welcome-marimeta-alumnus': ApiWelcomeMarimetaAlumnusWelcomeMarimetaAlumnus;

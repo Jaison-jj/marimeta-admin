@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_nav_with_options",
+  "info": {
+    "displayName": "navWithOptions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-item"
+    }
+  }
+}

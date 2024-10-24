@@ -210,6 +210,45 @@ export interface ComponentPageBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentNavWithOptions extends Struct.ComponentSchema {
+  collectionName: 'components_component_nav_with_options';
+  info: {
+    displayName: 'navWithOptions';
+    description: '';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    options: Schema.Attribute.Component<'component.nav-item', true>;
+  };
+}
+
+export interface ComponentNavLink extends Struct.ComponentSchema {
+  collectionName: 'components_component_nav_links';
+  info: {
+    displayName: 'navLink';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentNavItem extends Struct.ComponentSchema {
+  collectionName: 'components_component_nav_items';
+  info: {
+    displayName: 'navItem';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentImageTitleDescriptions
   extends Struct.ComponentSchema {
   collectionName: 'components_component_image_title_descriptions';
@@ -444,6 +483,9 @@ declare module '@strapi/strapi' {
       'component.price-card': ComponentPriceCard;
       'component.parent-card': ComponentParentCard;
       'component.page-banner': ComponentPageBanner;
+      'component.nav-with-options': ComponentNavWithOptions;
+      'component.nav-link': ComponentNavLink;
+      'component.nav-item': ComponentNavItem;
       'component.image-title-descriptions': ComponentImageTitleDescriptions;
       'component.image-title-description-button': ComponentImageTitleDescriptionButton;
       'component.image-title-desc': ComponentImageTitleDesc;

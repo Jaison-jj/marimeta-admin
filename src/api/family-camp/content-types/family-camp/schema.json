@@ -31,6 +31,16 @@
       "type": "component",
       "repeatable": false,
       "component": "component.title-and-description"
+    },
+    "additionalInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-description-button"
+    },
+    "rsvp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-description-button"
     }
   }
 }

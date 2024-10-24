@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_nav_items",
+  "info": {
+    "displayName": "navItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 80
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
