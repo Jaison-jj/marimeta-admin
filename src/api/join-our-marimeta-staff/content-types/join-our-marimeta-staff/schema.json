@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "join_our_marimeta_staffs",
+  "info": {
+    "singularName": "join-our-marimeta-staff",
+    "pluralName": "join-our-marimeta-staffs",
+    "displayName": "joinOurMarimetaStaff",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    },
+    "rolesTitle": {
+      "type": "string",
+      "required": true
+    },
+    "howWeHire": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "summerSessions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "roles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card.image-title-desc-link-button"
+    }
+  }
+}

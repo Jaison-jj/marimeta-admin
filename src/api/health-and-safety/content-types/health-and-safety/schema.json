@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "health_and_safeties",
+  "info": {
+    "singularName": "health-and-safety",
+    "pluralName": "health-and-safeties",
+    "displayName": "healthAndSafety",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.page-banner"
+    },
+    "safety": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "accreditation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "healthCenter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "allergies": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-descriptions"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-title-descriptions"
+    },
+    "camperAttention": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description"
+    }
+  }
+}

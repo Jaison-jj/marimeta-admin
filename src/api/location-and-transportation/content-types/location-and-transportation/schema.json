@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "location_and_transportations",
+  "info": {
+    "singularName": "location-and-transportation",
+    "pluralName": "location-and-transportations",
+    "displayName": "locationAndTransportation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description"
+    },
+    "howToReach": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.image-title-desc"
+    }
+  }
+}

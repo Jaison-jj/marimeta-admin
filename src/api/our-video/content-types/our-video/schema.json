@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_videos",
+  "info": {
+    "singularName": "our-video",
+    "pluralName": "our-videos",
+    "displayName": "ourVideo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.video-or-image"
+    }
+  }
+}

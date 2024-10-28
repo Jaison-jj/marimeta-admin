@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_sicknesses",
+  "info": {
+    "singularName": "home-sickness",
+    "pluralName": "home-sicknesses",
+    "displayName": "homeSickness",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "descriptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.description"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-descriptions"
+    },
+    "footer": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

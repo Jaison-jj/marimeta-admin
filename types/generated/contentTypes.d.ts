@@ -804,6 +804,59 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHealthAndSafetyHealthAndSafety
+  extends Struct.SingleTypeSchema {
+  collectionName: 'health_and_safeties';
+  info: {
+    singularName: 'health-and-safety';
+    pluralName: 'health-and-safeties';
+    displayName: 'healthAndSafety';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', true>;
+    safety: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    accreditation: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    healthCenter: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    allergies: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    about: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      true
+    >;
+    camperAttention: Schema.Attribute.Component<
+      'component.title-and-description',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::health-and-safety.health-and-safety'
+    >;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -853,6 +906,148 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeSicknessHomeSickness extends Struct.SingleTypeSchema {
+  collectionName: 'home_sicknesses';
+  info: {
+    singularName: 'home-sickness';
+    pluralName: 'home-sicknesses';
+    displayName: 'homeSickness';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+    benefits: Schema.Attribute.Component<'component.image-descriptions', true>;
+    footer: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-sickness.home-sickness'
+    >;
+  };
+}
+
+export interface ApiImportantStaffDateImportantStaffDate
+  extends Struct.SingleTypeSchema {
+  collectionName: 'important_staff_dates';
+  info: {
+    singularName: 'important-staff-date';
+    pluralName: 'important-staff-dates';
+    displayName: 'importantStaffDate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    staffDates: Schema.Attribute.Component<'component.description', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::important-staff-date.important-staff-date'
+    >;
+  };
+}
+
+export interface ApiJoinOurMarimetaStaffJoinOurMarimetaStaff
+  extends Struct.SingleTypeSchema {
+  collectionName: 'join_our_marimeta_staffs';
+  info: {
+    singularName: 'join-our-marimeta-staff';
+    pluralName: 'join-our-marimeta-staffs';
+    displayName: 'joinOurMarimetaStaff';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    about: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    rolesTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    howWeHire: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    summerSessions: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    roles: Schema.Attribute.Component<
+      'card.image-title-desc-link-button',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::join-our-marimeta-staff.join-our-marimeta-staff'
+    >;
+  };
+}
+
+export interface ApiLocationAndTransportationLocationAndTransportation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'location_and_transportations';
+  info: {
+    singularName: 'location-and-transportation';
+    pluralName: 'location-and-transportations';
+    displayName: 'locationAndTransportation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    location: Schema.Attribute.Component<
+      'component.title-and-description',
+      false
+    >;
+    howToReach: Schema.Attribute.Component<'component.image-title-desc', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-and-transportation.location-and-transportation'
+    >;
+  };
+}
+
 export interface ApiMeetTheDirectorMeetTheDirector
   extends Struct.SingleTypeSchema {
   collectionName: 'meet_the_directors';
@@ -884,6 +1079,41 @@ export interface ApiMeetTheDirectorMeetTheDirector
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::meet-the-director.meet-the-director'
+    >;
+  };
+}
+
+export interface ApiMetaStaffMetaStaff extends Struct.SingleTypeSchema {
+  collectionName: 'meta_staffs';
+  info: {
+    singularName: 'meta-staff';
+    pluralName: 'meta-staffs';
+    displayName: 'metaStaff';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    about: Schema.Attribute.Component<'component.title-and-description', false>;
+    counselors: Schema.Attribute.Component<
+      'component.title-descriptions-images',
+      false
+    >;
+    feedbacksTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    feedbackImage: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::meta-staff.meta-staff'
     >;
   };
 }
@@ -979,6 +1209,132 @@ export interface ApiOurExcitingActivitieOurExcitingActivitie
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::our-exciting-activitie.our-exciting-activitie'
+    >;
+  };
+}
+
+export interface ApiOurFoodOurFood extends Struct.SingleTypeSchema {
+  collectionName: 'our_foods';
+  info: {
+    singularName: 'our-food';
+    pluralName: 'our-foods';
+    displayName: 'ourFood';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    about: Schema.Attribute.Component<'component.title-and-description', false>;
+    fruiteAndSnack: Schema.Attribute.Component<
+      'component.image-title-descriptions',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-food.our-food'
+    >;
+  };
+}
+
+export interface ApiOurVideoOurVideo extends Struct.SingleTypeSchema {
+  collectionName: 'our_videos';
+  info: {
+    singularName: 'our-video';
+    pluralName: 'our-videos';
+    displayName: 'ourVideo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    about: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    videos: Schema.Attribute.Component<'component.video-or-image', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-video.our-video'
+    >;
+  };
+}
+
+export interface ApiParentTestimonialParentTestimonial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'parent_testimonials';
+  info: {
+    singularName: 'parent-testimonial';
+    pluralName: 'parent-testimonials';
+    displayName: 'parentTestimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::parent-testimonial.parent-testimonial'
+    >;
+  };
+}
+
+export interface ApiStaffFaqStaffFaq extends Struct.SingleTypeSchema {
+  collectionName: 'staff_faqs';
+  info: {
+    singularName: 'staff-faq';
+    pluralName: 'staff-faqs';
+    displayName: 'staffFaq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    head: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    faqs: Schema.Attribute.Component<'faq.faq-item', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::staff-faq.staff-faq'
     >;
   };
 }
@@ -1485,11 +1841,21 @@ declare module '@strapi/strapi' {
       'api::facility.facility': ApiFacilityFacility;
       'api::family-camp.family-camp': ApiFamilyCampFamilyCamp;
       'api::footer.footer': ApiFooterFooter;
+      'api::health-and-safety.health-and-safety': ApiHealthAndSafetyHealthAndSafety;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::home-sickness.home-sickness': ApiHomeSicknessHomeSickness;
+      'api::important-staff-date.important-staff-date': ApiImportantStaffDateImportantStaffDate;
+      'api::join-our-marimeta-staff.join-our-marimeta-staff': ApiJoinOurMarimetaStaffJoinOurMarimetaStaff;
+      'api::location-and-transportation.location-and-transportation': ApiLocationAndTransportationLocationAndTransportation;
       'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;
+      'api::meta-staff.meta-staff': ApiMetaStaffMetaStaff;
       'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;
       'api::nav-header.nav-header': ApiNavHeaderNavHeader;
       'api::our-exciting-activitie.our-exciting-activitie': ApiOurExcitingActivitieOurExcitingActivitie;
+      'api::our-food.our-food': ApiOurFoodOurFood;
+      'api::our-video.our-video': ApiOurVideoOurVideo;
+      'api::parent-testimonial.parent-testimonial': ApiParentTestimonialParentTestimonial;
+      'api::staff-faq.staff-faq': ApiStaffFaqStaffFaq;
       'api::staff-testimonial.staff-testimonial': ApiStaffTestimonialStaffTestimonial;
       'api::welcome-marimeta-alumnus.welcome-marimeta-alumnus': ApiWelcomeMarimetaAlumnusWelcomeMarimetaAlumnus;
       'api::why-choose-marimeta.why-choose-marimeta': ApiWhyChooseMarimetaWhyChooseMarimeta;

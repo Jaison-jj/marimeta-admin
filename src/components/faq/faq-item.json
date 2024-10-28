@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_faq_faq_items",
+  "info": {
+    "displayName": "faqItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "isList": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

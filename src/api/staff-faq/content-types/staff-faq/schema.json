@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "staff_faqs",
+  "info": {
+    "singularName": "staff-faq",
+    "pluralName": "staff-faqs",
+    "displayName": "staffFaq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq-item"
+    }
+  }
+}

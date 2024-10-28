@@ -1,5 +1,31 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface FaqFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_faq_faq_items';
+  info: {
+    displayName: 'faqItem';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    isList: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
+export interface CardImageTitleDescLinkButton extends Struct.ComponentSchema {
+  collectionName: 'components_card_image_title_desc_link_buttons';
+  info: {
+    displayName: 'ImageTitleDescLinkButton';
+  };
+  attributes: {
+    image: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentVideoOrImage extends Struct.ComponentSchema {
   collectionName: 'components_component_video_or_images';
   info: {
@@ -292,6 +318,17 @@ export interface ComponentImageTitleDesc extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentImageDescriptions extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_descriptions';
+  info: {
+    displayName: 'ImageDescriptions';
+  };
+  attributes: {
+    image: Schema.Attribute.String;
+    descriptions: Schema.Attribute.Component<'component.description', true>;
+  };
+}
+
 export interface ComponentImageAndDescription extends Struct.ComponentSchema {
   collectionName: 'components_component_image_and_descriptions';
   info: {
@@ -467,6 +504,8 @@ export interface ComponentAboutMarimetaCampers extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'faq.faq-item': FaqFaqItem;
+      'card.image-title-desc-link-button': CardImageTitleDescLinkButton;
       'component.video-or-image': ComponentVideoOrImage;
       'component.video-card': ComponentVideoCard;
       'component.titles-and-descriptions': ComponentTitlesAndDescriptions;
@@ -489,6 +528,7 @@ declare module '@strapi/strapi' {
       'component.image-title-descriptions': ComponentImageTitleDescriptions;
       'component.image-title-description-button': ComponentImageTitleDescriptionButton;
       'component.image-title-desc': ComponentImageTitleDesc;
+      'component.image-descriptions': ComponentImageDescriptions;
       'component.image-and-description': ComponentImageAndDescription;
       'component.hero': ComponentHero;
       'component.get-in-touch': ComponentGetInTouch;
