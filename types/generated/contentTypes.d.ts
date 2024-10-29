@@ -591,10 +591,7 @@ export interface ApiCamperTestimonialCamperTestimonial
     banner: Schema.Attribute.Component<'component.page-banner', false>;
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    testimonials: Schema.Attribute.Component<
-      'component.image-title-desc',
-      true
-    >;
+    testimonials: Schema.Attribute.Component<'card.testimonial', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1068,6 +1065,8 @@ export interface ApiMeetTheDirectorMeetTheDirector
       'component.director',
       false
     >;
+    petsTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    dogs: Schema.Attribute.Component<'card.testimonial', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1246,6 +1245,40 @@ export interface ApiOurFoodOurFood extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOurPhilosophyOurPhilosophy extends Struct.SingleTypeSchema {
+  collectionName: 'our_philosophies';
+  info: {
+    singularName: 'our-philosophy';
+    pluralName: 'our-philosophies';
+    displayName: 'ourPhilosophy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    mission: Schema.Attribute.Component<'card.testimonial', false>;
+    mnm: Schema.Attribute.Component<'component.title-and-description', false>;
+    morals: Schema.Attribute.Component<
+      'component.title-and-description',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-philosophy.our-philosophy'
+    >;
+  };
+}
+
 export interface ApiOurVideoOurVideo extends Struct.SingleTypeSchema {
   collectionName: 'our_videos';
   info: {
@@ -1285,12 +1318,18 @@ export interface ApiParentTestimonialParentTestimonial
     singularName: 'parent-testimonial';
     pluralName: 'parent-testimonials';
     displayName: 'parentTestimonial';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     banner: Schema.Attribute.Component<'component.page-banner', false>;
+    head: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
+    testimonials: Schema.Attribute.Component<'card.testimonial', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1853,6 +1892,7 @@ declare module '@strapi/strapi' {
       'api::nav-header.nav-header': ApiNavHeaderNavHeader;
       'api::our-exciting-activitie.our-exciting-activitie': ApiOurExcitingActivitieOurExcitingActivitie;
       'api::our-food.our-food': ApiOurFoodOurFood;
+      'api::our-philosophy.our-philosophy': ApiOurPhilosophyOurPhilosophy;
       'api::our-video.our-video': ApiOurVideoOurVideo;
       'api::parent-testimonial.parent-testimonial': ApiParentTestimonialParentTestimonial;
       'api::staff-faq.staff-faq': ApiStaffFaqStaffFaq;

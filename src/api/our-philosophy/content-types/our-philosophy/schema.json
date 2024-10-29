@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_philosophies",
+  "info": {
+    "singularName": "our-philosophy",
+    "pluralName": "our-philosophies",
+    "displayName": "ourPhilosophy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "mission": {
+      "type": "component",
+      "repeatable": false,
+      "component": "card.testimonial"
+    },
+    "mnm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description"
+    },
+    "morals": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description"
+    }
+  }
+}

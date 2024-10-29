@@ -26,7 +26,7 @@
     "testimonials": {
       "type": "component",
       "repeatable": true,
-      "component": "component.image-title-desc"
+      "component": "card.testimonial"
     }
   }
 }

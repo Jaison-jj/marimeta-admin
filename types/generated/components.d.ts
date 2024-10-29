@@ -12,6 +12,18 @@ export interface FaqFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface CardTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_card_testimonials';
+  info: {
+    displayName: 'testimonial';
+  };
+  attributes: {
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface CardImageTitleDescLinkButton extends Struct.ComponentSchema {
   collectionName: 'components_card_image_title_desc_link_buttons';
   info: {
@@ -505,6 +517,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'faq.faq-item': FaqFaqItem;
+      'card.testimonial': CardTestimonial;
       'card.image-title-desc-link-button': CardImageTitleDescLinkButton;
       'component.video-or-image': ComponentVideoOrImage;
       'component.video-card': ComponentVideoCard;
