@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "current_and_new_family_resources",
+  "info": {
+    "singularName": "current-and-new-family-resource",
+    "pluralName": "current-and-new-family-resources",
+    "displayName": "currentAndNewFamilyResource",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "resources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-link"
+    }
+  }
+}

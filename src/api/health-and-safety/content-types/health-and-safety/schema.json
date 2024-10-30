@@ -14,7 +14,7 @@
   "attributes": {
     "banner": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "component.page-banner"
     },
     "safety": {
@@ -39,7 +39,7 @@
     },
     "about": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "component.image-title-descriptions"
     },
     "camperAttention": {

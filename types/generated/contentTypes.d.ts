@@ -607,6 +607,65 @@ export interface ApiCamperTestimonialCamperTestimonial
   };
 }
 
+export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
+  collectionName: 'contact_uses';
+  info: {
+    singularName: 'contact-us';
+    pluralName: 'contact-uses';
+    displayName: 'contactUS';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    contactUsForm: Schema.Attribute.Component<'component.contact-us', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us.contact-us'
+    >;
+  };
+}
+
+export interface ApiCurrentAndNewFamilyResourceCurrentAndNewFamilyResource
+  extends Struct.SingleTypeSchema {
+  collectionName: 'current_and_new_family_resources';
+  info: {
+    singularName: 'current-and-new-family-resource';
+    pluralName: 'current-and-new-family-resources';
+    displayName: 'currentAndNewFamilyResource';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    resources: Schema.Attribute.Component<'component.nav-link', true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::current-and-new-family-resource.current-and-new-family-resource'
+    >;
+  };
+}
+
 export interface ApiDateAndRateDateAndRate extends Struct.SingleTypeSchema {
   collectionName: 'date_and_rates';
   info: {
@@ -814,7 +873,7 @@ export interface ApiHealthAndSafetyHealthAndSafety
     draftAndPublish: true;
   };
   attributes: {
-    banner: Schema.Attribute.Component<'component.page-banner', true>;
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
     safety: Schema.Attribute.Component<
       'component.image-title-descriptions',
       false
@@ -833,7 +892,7 @@ export interface ApiHealthAndSafetyHealthAndSafety
     >;
     about: Schema.Attribute.Component<
       'component.image-title-descriptions',
-      true
+      false
     >;
     camperAttention: Schema.Attribute.Component<
       'component.title-and-description',
@@ -918,7 +977,7 @@ export interface ApiHomeSicknessHomeSickness extends Struct.SingleTypeSchema {
     banner: Schema.Attribute.Component<'component.page-banner', false>;
     descriptions: Schema.Attribute.Component<'component.description', true>;
     benefits: Schema.Attribute.Component<'component.image-descriptions', true>;
-    footer: Schema.Attribute.Text & Schema.Attribute.Required;
+    pageFooter: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -996,6 +1055,9 @@ export interface ApiJoinOurMarimetaStaffJoinOurMarimetaStaff
       'card.image-title-desc-link-button',
       true
     >;
+    joiningLink: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://airtable.com/app2AbR1ioovtVGLy/pagbpOK3XxI2XVZuB/form'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1030,6 +1092,10 @@ export interface ApiLocationAndTransportationLocationAndTransportation
       false
     >;
     howToReach: Schema.Attribute.Component<'component.image-title-desc', false>;
+    question: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1226,7 +1292,7 @@ export interface ApiOurFoodOurFood extends Struct.SingleTypeSchema {
   attributes: {
     banner: Schema.Attribute.Component<'component.page-banner', false>;
     about: Schema.Attribute.Component<'component.title-and-description', false>;
-    fruiteAndSnack: Schema.Attribute.Component<
+    fruitAndSnack: Schema.Attribute.Component<
       'component.image-title-descriptions',
       false
     >;
@@ -1392,11 +1458,13 @@ export interface ApiStaffTestimonialStaffTestimonial
   };
   attributes: {
     banner: Schema.Attribute.Component<'component.page-banner', false>;
-    title: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
     testimonials: Schema.Attribute.Component<
       'component.image-title-desc',
       true
+    >;
+    head: Schema.Attribute.Component<
+      'component.title-and-description-card',
+      false
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1876,6 +1944,8 @@ declare module '@strapi/strapi' {
       'api::all-faq.all-faq': ApiAllFaqAllFaq;
       'api::blog.blog': ApiBlogBlog;
       'api::camper-testimonial.camper-testimonial': ApiCamperTestimonialCamperTestimonial;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::current-and-new-family-resource.current-and-new-family-resource': ApiCurrentAndNewFamilyResourceCurrentAndNewFamilyResource;
       'api::date-and-rate.date-and-rate': ApiDateAndRateDateAndRate;
       'api::facility.facility': ApiFacilityFacility;
       'api::family-camp.family-camp': ApiFamilyCampFamilyCamp;

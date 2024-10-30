@@ -27,7 +27,7 @@
       "repeatable": true,
       "component": "component.image-descriptions"
     },
-    "footer": {
+    "pageFooter": {
       "type": "text",
       "required": true
     }

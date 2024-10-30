@@ -17,16 +17,15 @@
       "repeatable": false,
       "component": "component.page-banner"
     },
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
     "testimonials": {
       "type": "component",
       "repeatable": true,
       "component": "component.image-title-desc"
+    },
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.title-and-description-card"
     }
   }
 }

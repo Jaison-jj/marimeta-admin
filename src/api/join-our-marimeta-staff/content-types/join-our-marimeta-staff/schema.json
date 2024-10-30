@@ -40,6 +40,11 @@
       "type": "component",
       "repeatable": true,
       "component": "card.image-title-desc-link-button"
+    },
+    "joiningLink": {
+      "type": "string",
+      "required": true,
+      "default": "https://airtable.com/app2AbR1ioovtVGLy/pagbpOK3XxI2XVZuB/form"
     }
   }
 }

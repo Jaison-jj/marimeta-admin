@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "our_foods",
+  "collectionName": "contact_uses",
   "info": {
-    "singularName": "our-food",
-    "pluralName": "our-foods",
-    "displayName": "ourFood",
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "contactUS",
     "description": ""
   },
   "options": {
@@ -17,15 +17,10 @@
       "repeatable": false,
       "component": "component.page-banner"
     },
-    "about": {
+    "contactUsForm": {
       "type": "component",
       "repeatable": false,
-      "component": "component.title-and-description"
-    },
-    "fruitAndSnack": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.image-title-descriptions"
+      "component": "component.contact-us"
     }
   }
 }
