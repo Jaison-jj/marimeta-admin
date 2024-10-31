@@ -1111,6 +1111,33 @@ export interface ApiLocationAndTransportationLocationAndTransportation
   };
 }
 
+export interface ApiMapMap extends Struct.SingleTypeSchema {
+  collectionName: 'maps';
+  info: {
+    singularName: 'map';
+    pluralName: 'maps';
+    displayName: 'map';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'component.page-banner', false>;
+    pointers: Schema.Attribute.Component<'map.map-pointer', true>;
+    mapImage: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::map.map'>;
+  };
+}
+
 export interface ApiMeetTheDirectorMeetTheDirector
   extends Struct.SingleTypeSchema {
   collectionName: 'meet_the_directors';
@@ -1956,6 +1983,7 @@ declare module '@strapi/strapi' {
       'api::important-staff-date.important-staff-date': ApiImportantStaffDateImportantStaffDate;
       'api::join-our-marimeta-staff.join-our-marimeta-staff': ApiJoinOurMarimetaStaffJoinOurMarimetaStaff;
       'api::location-and-transportation.location-and-transportation': ApiLocationAndTransportationLocationAndTransportation;
+      'api::map.map': ApiMapMap;
       'api::meet-the-director.meet-the-director': ApiMeetTheDirectorMeetTheDirector;
       'api::meta-staff.meta-staff': ApiMetaStaffMetaStaff;
       'api::mini-meta-tour-day.mini-meta-tour-day': ApiMiniMetaTourDayMiniMetaTourDay;

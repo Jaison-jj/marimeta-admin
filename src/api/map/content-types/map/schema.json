@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "maps",
+  "info": {
+    "singularName": "map",
+    "pluralName": "maps",
+    "displayName": "map",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.page-banner"
+    },
+    "pointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map.map-pointer"
+    },
+    "mapImage": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

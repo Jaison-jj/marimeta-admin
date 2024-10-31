@@ -1,5 +1,24 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface MapMapPointer extends Struct.ComponentSchema {
+  collectionName: 'components_map_map_pointers';
+  info: {
+    displayName: 'mapPointer';
+    icon: 'pinMap';
+    description: '';
+  };
+  attributes: {
+    number: Schema.Attribute.Integer & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Our tennis instruction is headed by not one, but two tennis pros. Many girls choose to come to Camp Marimeta over a tennis camp because of the professional quality instruction they receive. With a lush pine backdrop, our facilities include 4 well-lit tennis courts and a high school regulation lit basketball court. You will find many of our pioneer campers here, after taps playing a set or two.'>;
+    image: Schema.Attribute.String;
+    top: Schema.Attribute.Integer & Schema.Attribute.Required;
+    left: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
 export interface FaqFaqItem extends Struct.ComponentSchema {
   collectionName: 'components_faq_faq_items';
   info: {
@@ -516,6 +535,7 @@ export interface CardImageTitleDescLinkButton extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'map.map-pointer': MapMapPointer;
       'faq.faq-item': FaqFaqItem;
       'component.video-or-image': ComponentVideoOrImage;
       'component.video-card': ComponentVideoCard;
